@@ -161,7 +161,47 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Customer'
+    post:
+      tags:
+        - Customer
+      summary: カスタマーの作成
+      description: DB にカスタマーを登録する
+      operationId: Create
 
+      #
+      # Paths Object: requestBody:
+      #
+      # type
+      # - Request Body Object | References Object
+      # Required
+      # - false
+      # URL
+      # - https://spec.openapis.org/oas/v3.0.2#operation-object
+      # 概要
+      # - 操作のリクエストボディ
+      # 詳細
+      # - Request Body
+      #   - https://spec.openapis.org/oas/v3.0.2#requestBodyObject
+      # - Reference Object
+      #   - https://spec.openapis.org/oas/v3.0.2#referenceObject
+      # 識別方法
+      # - Top の key に"content"があると Request Body Object
+      # - Top の key に"$ref"があると Reference Object
+      requestBody:
+        description: カスタマーオブジェクト
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+        required: true
+
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessMessage'
 #
 # OpenAPI Object: components
 #
@@ -247,4 +287,12 @@ components:
         first_name:
           type: string
         last_name:
+          type: string
+
+    SuccessMessage:
+      required:
+        - message
+      type: object
+      properties:
+        message:
           type: string
