@@ -202,6 +202,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SuccessMessage'
+    put:
+      tags:
+        - Customer
+      summary: カスタマーの更新
+      description: DB のカスタマーを更新する
+      operationId: Update
+      requestBody:
+        description: カスタマーオブジェクト
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+        required: true
+
+      responses:
+        204:
+          description: No Content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessMessage'
 #
 # OpenAPI Object: components
 #
