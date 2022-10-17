@@ -223,6 +223,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SuccessMessage'
+  /customers/{id}:
+    delete:
+      tags:
+        - Customer
+      summary: カスタマーの削除
+      description: DB のカスタマーを削除する
+      operationId: Delete
+      parameters:
+        - name: id
+          in: path
+          description: カスタマーID
+          required: true
+          schema:
+            type: integer
+      responses:
+        204:
+          description: No Content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessMessage'
 #
 # OpenAPI Object: components
 #
