@@ -160,7 +160,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Customer'
+                $ref: '#/components/schemas/MultipleCustomersResponse'
     post:
       tags:
         - Customer
@@ -330,7 +330,15 @@ components:
           type: string
         last_name:
           type: string
-
+    MultipleCustomersResponse:
+      required:
+        - customers
+      type: object
+      properties:
+        customers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Customer'
     SuccessMessage:
       required:
         - message
