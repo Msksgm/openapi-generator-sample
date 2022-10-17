@@ -1,0 +1,250 @@
+# OpenAPI Object: openapi
+#
+# type
+# - string
+# Required
+# - true
+# URL
+# - https://spec.openapis.org/oas/v3.0.2#openapi-object
+#
+openapi: "3.0.2"
+
+#
+# OpenAPI Object: Info
+#
+# type
+# - InfoObject
+# Required
+# - true
+# URL
+# - https://spec.openapis.org/oas/v3.0.2#openapi-object
+# 概要
+# - API に関するメタデータ
+# 詳細
+# - https://spec.openapis.org/oas/v3.0.2#infoObject
+#
+info:
+  title: OpenAPI Generator Kotlin Sample
+  description: OpenAPI Generator を用いた自動生成のサンプルコードです
+  license:
+    name: MIT License
+    url: https://opensource.org/licenses/MIT
+  version: "1.0"
+
+#
+# OpenAPI Object: servers
+#
+# type
+# - [Server Object]
+# Required
+# - false
+# URL
+# - https://spec.openapis.org/oas/v3.0.2#openapi-object
+# 概要
+# - ターゲットサーバーへの接続情報を提供する Server Object の配列
+# - 指定なし or 空配列のとき '/' になる
+# 詳細
+# - https://spec.openapis.org/oas/v3.0.2#serverObject
+#
+servers:
+  - url: /api
+
+#
+# OpenAPI Object: paths
+#
+# type
+# - Paths Object
+# Required
+# - true
+# URL
+# - https://spec.openapis.org/oas/v3.0.2#openapi-object
+# 概要
+# - 利用可能なパスと操作内容
+# 詳細
+# - https://spec.openapis.org/oas/v3.0.2#pathsObject
+#
+paths:
+
+  #
+  # Paths Object
+  #
+  # 概要
+  # - エンドポイントへの相対パスを記述する
+  # - フィールド名はスラッシュから始まる
+  #
+  /customers:
+
+    #
+    # Method: get/put/post/delete/options/head/patch/trace
+    #
+    get:
+
+      #
+      # Paths Object: tags
+      #
+      # type
+      # - [string]
+      # Required
+      # - false
+      # URL
+      # - https://spec.openapis.org/oas/v3.0.2#operation-object
+      # 概要
+      # - API ドキュメント制御のためのタグのリスト
+      # - OpenAPI Generator で、interface にまとめられる単位にできる
+      #
+      tags:
+        - Customer
+
+      #
+      # Paths Object: Summary
+      #
+      # type
+      # - string
+      # Required
+      # - false
+      # URL
+      # - https://spec.openapis.org/oas/v3.0.2#operation-object
+      # 概要
+      # - API ドキュメント制御のためのタグのリスト
+      # 概要
+      # - 操作内容のサマリー
+      #
+      summary: カスタマーの一覧取得
+
+      #
+      # Paths Object: description
+      #
+      # type
+      # - string
+      # Required
+      # - false
+      # URL
+      # - https://spec.openapis.org/oas/v3.0.2#operation-object
+      # 概要
+      # - 説明
+      #
+      description: DB に登録されているカスタマーを全て取得する
+
+      #
+      # Paths Object: operationId
+      #
+      # type
+      # - string
+      # Required
+      # - false
+      # URL
+      # - https://spec.openapis.org/oas/v3.0.2#operation-object
+      # 概要
+      # - 操作の（ユニークな）識別子
+      # - OpenAPI Generator で、メソッド名になる
+      #
+      operationId: List
+
+      #
+      # Paths Object: responses
+      #
+      # type
+      # - Responses Object
+      # Required
+      # - true
+      # URL
+      # - https://spec.openapis.org/oas/v3.0.2#operation-object
+      # 概要
+      # - この条件に返される可能性のあるレスポンスのリスト
+      # Responses Object の詳細
+      # - https://spec.openapis.org/oas/v3.0.2#responsesObject
+      #
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+
+#
+# OpenAPI Object: components
+#
+# type
+# - Component Object
+# Required
+# - No
+# URL
+# - https://spec.openapis.org/oas/v3.0.2#openapi-object
+# 概要
+# - スキーマに関する共通化するための要素
+# 詳細
+# - https://spec.openapis.org/oas/v3.0.2#componentsObject
+#
+components:
+
+  #
+  # Components Object: schemas
+  #
+  # type
+  # - Map[string, Schema Object | Reference Object]
+  #   - Key
+  #     - String
+  #   - Value
+  #     - Schema Object | Reference Object
+  # Required
+  # - false
+  # URL
+  # - https://spec.openapis.org/oas/v3.0.2#openapi-object
+  # 概要
+  # - スキーマに関する共通化するための要素
+  # 詳細
+  # - Schema Object
+  #   - https://spec.openapis.org/oas/v3.0.2#schema-object
+  # - Reference Object
+  #   - https://spec.openapis.org/oas/v3.0.2#referenceObject
+  #
+  schemas:
+
+    #
+    # Schema Object
+    #
+    # 入力データ型の定義で利用
+    # JSON Schema の拡張サブセット
+    # 基本は JSON Schema に準拠
+    #
+    Customer:
+
+      #
+      # Schema Object: required
+      #
+      # type
+      # - [string]
+      # Required
+      # - false
+      # 概要
+      # - 省略したら空配列
+      # - 要素はユニークである必要がある
+      #
+      required:
+        - first_name
+        - last_name
+
+      #
+      # Schema Object: type
+      #
+      # type
+      # - string
+      # - | null
+      # - | boolean
+      # - | object
+      # - | array
+      # - | number
+      # - | string
+      #
+      # Required
+      # - true
+      # 概要
+      # - インスタンスの型と一致していること
+      type: object
+
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
