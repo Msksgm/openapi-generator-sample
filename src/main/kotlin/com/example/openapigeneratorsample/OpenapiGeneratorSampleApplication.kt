@@ -7,5 +7,6 @@ import org.springframework.boot.runApplication
 class OpenapiGeneratorSampleApplication
 
 fun main(args: Array<String>) {
+	@Suppress("SpreadOperator")
 	runApplication<OpenapiGeneratorSampleApplication>(*args)
 }
