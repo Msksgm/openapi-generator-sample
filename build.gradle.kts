@@ -12,6 +12,22 @@ plugins {
 	kotlin("plugin.spring") version "1.6.21"
 
 	/**
+	 * detekt
+	 *
+	 * URL
+	 * - https://github.com/detekt/detekt
+	 * GradlePlugins(plugins.gradle.org)
+	 * - https://plugins.gradle.org/plugin/io.gitlab.arturbosch.detekt
+	 * Main用途
+	 * - Linter/Formatter
+	 * Sub用途
+	 * - 無し
+	 * 概要
+	 * KotlinのLinter/Formatter
+	 */
+	id("io.gitlab.arturbosch.detekt") version "1.21.0"
+
+	/**
 	 * openapi.generator
 	 *
 	 * 公式ページ
