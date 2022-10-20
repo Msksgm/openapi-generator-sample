@@ -44,7 +44,7 @@ jobs:
           TZ: Asia/Tokyo
       - name: '【mainブランチ以外】'
         if: github.ref != 'refs/heads/main'
-        run: make test.full
+        run: make test
         env:
           TZ: Asia/Tokyo
 
