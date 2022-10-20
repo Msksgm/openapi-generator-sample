@@ -1,3 +1,7 @@
+.PHONY: test
+test: ## テスト実行
+	./gradlew test
+
 .PHONY: fmt
 fmt: ## format
 	./gradlew detekt --auto-correct
