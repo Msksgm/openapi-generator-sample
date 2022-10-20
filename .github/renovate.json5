@@ -1,0 +1,69 @@
+{
+  //
+  // automerge
+  // https://docs.renovatebot.com/configuration-options/#automerge
+  //
+  // 自動マージ
+  // メジャーバージョン・マイナーバージョンで自動マージの true/false を設定できる
+  //
+  // default false
+  automerge: true,
+  //
+  // extends
+  // https://docs.renovatebot.com/configuration-options/#extends
+  //
+  // プリセットを使用
+  //
+  extends: [
+    "config:base",
+    //
+    // timezone
+    // https://docs.renovatebot.com/configuration-options/#timezone
+    // https://docs.renovatebot.com/presets-default/#timezonearg0
+    //
+    // 概要
+    // - タイムゾーン
+    //
+    // default: null(UTC)
+    //
+    ":timezone(Asia/Tokyo)"
+  ],
+  //
+  // labels
+  // https://docs.renovatebot.com/configuration-options/#labels
+  //
+  // 概要
+  // - 全てのPRにつけるラベル
+  //
+  labels: [
+    "dependencies"
+  ],
+  //
+  // dependencyDashboard
+  // https://docs.renovatebot.com/configuration-options/#dependencydashboard
+  //
+  // 概要
+  // - ダッシュボード作成する・しない
+  //
+  // default: false
+  //
+  dependencyDashboard: true,
+  //
+  // packageRules
+  // https://docs.renovatebot.com/configuration-options/#packagerules
+  //
+  // 概要
+  // - updateするパッケージの単位(まとめることができる)
+  //
+  // default: なし
+  //
+  packageRules: [
+    {
+      groupName: "org.jetbrains.kotlin.*",
+      description: "一緒に上げないとCIが落ちる",
+      matchPackagePrefixes: [
+        "org.jetbrains.kotlin."
+      ]
+    },
+  ]
+}
