@@ -3,7 +3,7 @@ import org.openapitools.generator.gradle.plugin.tasks.GenerateTask
 
 plugins {
 	id("org.springframework.boot") version "2.7.13"
-	id("io.spring.dependency-management") version "1.1.1"
+	id("io.spring.dependency-management") version "1.1.2"
 	/**
 	 * 注意
 	 * jvm と plugin.spring のバージョンは合わせること
