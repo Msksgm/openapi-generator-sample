@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.openapitools.generator.gradle.plugin.tasks.GenerateTask
 
 plugins {
-	id("org.springframework.boot") version "2.7.13"
+	id("org.springframework.boot") version "2.7.14"
 	id("io.spring.dependency-management") version "1.1.2"
 	/**
 	 * 注意
