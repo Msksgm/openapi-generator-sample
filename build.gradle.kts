@@ -82,7 +82,7 @@ dependencies {
 	 */
 	compileOnly("io.swagger.core.v3:swagger-annotations:2.2.21")
 	compileOnly("io.swagger.core.v3:swagger-models:2.2.21")
-	compileOnly("jakarta.annotation:jakarta.annotation-api:2.1.1")
+	compileOnly("jakarta.annotation:jakarta.annotation-api:3.0.0")
 
 	/**
 	 * Spring Boot Starter Validation
