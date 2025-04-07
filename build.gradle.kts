@@ -80,7 +80,7 @@ dependencies {
 	 * - OpenAPI Generator で作成されるコードが import している
 	 * - 基本的にプロダクションコードでは使わない想定
 	 */
-	compileOnly("io.swagger.core.v3:swagger-annotations:2.2.29")
+	compileOnly("io.swagger.core.v3:swagger-annotations:2.2.30")
 	compileOnly("io.swagger.core.v3:swagger-models:2.2.29")
 	compileOnly("jakarta.annotation:jakarta.annotation-api:3.0.0")
 
