@@ -30,7 +30,7 @@ jobs:
       statuses: write
     steps:
       - name: リポジトリのチェックアウト
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Javaの環境をセットアップ
         uses: actions/setup-java@v5
         with:
@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: リポジトリのチェックアウト
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Javaの環境をセットアップ
         uses: actions/setup-java@v5
         with:
