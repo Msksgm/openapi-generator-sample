@@ -8,8 +8,8 @@ plugins {
 	 * 注意
 	 * jvm と plugin.spring のバージョンは合わせること
 	 */
-	kotlin("jvm") version "1.8.21"
-	kotlin("plugin.spring") version "1.8.21"
+	kotlin("jvm") version "2.3.10"
+	kotlin("plugin.spring") version "2.3.10"
 
 	/**
 	 * detekt
